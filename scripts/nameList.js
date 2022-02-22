@@ -57,6 +57,8 @@ function redrawList() {
 	}
 
 	if (names.length === 0) {
+		selected = undefined;
+
 		const textNode = document.createElement("span");
 		textNode.className = "emptyListElement";
 		textNode.appendChild(document.createTextNode("Cette liste est vide :'("));
@@ -79,7 +81,11 @@ function redrawList() {
 				</button>
 			`;
 			
+			// options button (3dots button)
 			let optionsButton = node.getElementsByClassName("optionsButton")[0];
+			optionsButton.addEventListener("click", event => {
+				showFoldMenu(node, i);
+			});	
 
 			// select on click
 			node.addEventListener("click", (event) => {
@@ -87,15 +93,6 @@ function redrawList() {
 				else selected = i;
 				redrawList();
 			});
-
-			// options button (3dots button)
-			optionsButton.addEventListener("click", (event) => {
-
-				const rect = node.getBoundingClientRect();
-				showFoldMenu(rect.right + 10, rect.bottom, i);
-				
-				redrawList();
-			});	
 
 			// adding to the multi-column list
 			const listIndex = Math.floor(i/10);

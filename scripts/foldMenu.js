@@ -1,4 +1,4 @@
-function showFoldMenu(x, y, nameIndex) {
+function showFoldMenu(listRow, nameIndex) {
 	const foldMenu = document.getElementById("foldMenu");
 	const background = document.getElementById("fold-menu-background");
 
@@ -6,21 +6,22 @@ function showFoldMenu(x, y, nameIndex) {
 	foldMenu.style.display = "initial";	
 
 	const menuHeight = foldMenu.getBoundingClientRect().height;
-	y -= menuHeight;
+	const rect = listRow.getBoundingClientRect();
+	let x = rect.right + 10;
+	let y = rect.bottom - menuHeight;
 
 	foldMenu.style.left = x + "px";
 	foldMenu.style.top = y + "px";
 
-
-	const removeBtnListener = event => {
+	// remove button
+	document.getElementById("removeBtn").addEventListener("click", event => {
+		selected = undefined;
 		names.splice(nameIndex, 1);
 		redrawList();
 		closeFoldMenu();
-	}
+	});
 
-	let removeBtn = document.getElementById("removeBtn");
-	removeBtn.addEventListener("click", removeBtnListener);
-
+	// close menu when click outside
 	setTimeout(() => {
 		executeOnClickOutSide(background, closeFoldMenu);
 	});
@@ -29,7 +30,7 @@ function showFoldMenu(x, y, nameIndex) {
 		foldMenu.style.display = "none";
 		background.style.display = "none";
 
-		removeBtn.removeEventListener("click", removeBtnListener);
+		removeAllEventListeners(foldMenu);
 	}
 }
 
