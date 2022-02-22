@@ -1,0 +1,86 @@
+:root {
+	--main-bg-color: #FEFFFF;
+	--dark-title: #17252A;
+	--dark-main: #2a7976;
+	--dark-main-transparent: #2a797688;
+	--intermediate-main: #2e918d;
+	--light-main: #3bb0aa;
+	--light-white: #DEF2F1; 
+}
+
+body {
+	background-color: var(--main-bg-color);
+	font-family: Helvetica;
+	margin: 0px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	/* font-size: 20px; */
+}
+
+h1 {
+	color: var(--dark-main);
+}
+
+h2 {
+	color: #023e8a;	
+}
+
+strong {
+	color: #023047;
+}
+
+ul, ol {
+	list-style: none;
+	margin: 0px;
+}
+
+button, input {
+	font-size: inherit;
+}
+
+/* unused */
+.page {
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+}
+
+/* unused */
+.column {
+	margin: 1rem;
+}
+
+.bandeau {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	background-color: var(--dark-title);
+	display: flex;
+	flex-direction: row;
+}
+
+.mainTitle {
+	color: var(--light-main);
+	font-size: 40px;
+	margin: 26.8px;
+}
+
+.footer {
+	display: flex;
+	margin-top: auto;
+}
+
+.credits-list {
+	padding: 10px;
+	margin: 1rem;
+	border-radius: 10px;
+	background-color: var(--light-white);
+}
+
+.credits-line {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1px;
+}

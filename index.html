@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Name Picker</title>
+		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<link href="css/list.css" rel="stylesheet" type="text/css" />	
+		<link href="css/foldMenu.css" rel="stylesheet" type="text/css" />	
+		
+		<script src="scripts/nameList.js" type="text/javascript"></script>
+		<script src="scripts/foldMenu.js" type="text/javascript"></script>
+	</head>
+	
+	<body>
+		<div class="bandeau">
+			<h1 class="mainTitle">NamePicker</h1>
+		</div>
+
+		<div id="list-section">
+			<h1>Liste de noms</h1>
+
+			<div class="inputLine">
+				<input type="text" id="nameInput" placeholder="Prénom NOM"></input>
+				<button class="addButton" id="addName">Ajouter</button>
+			</div>				
+
+			<div id="list-container">
+				<ol class="nameList" id="noms">
+				</ol>
+			</div>
+		</div>
+	
+		<div id="fold-menu-background"></div>
+		<div id="foldMenu">
+			<ul class="foldMenuList">
+				<li class="foldMenuLine" id="moveBtn">
+					<img class="icon" src="medias/scroll.png">
+					<span>Move</span>
+				</li>
+				<li class="foldMenuLine" id="renameBtn">
+					<img class="icon" src="medias/edit-button.png">
+					<span>Rename</span>
+				</li>
+				<li class="foldMenuLine" id="removeBtn">
+					<img class="icon" src="medias/trash.png">
+					<span class="dangerText">Delete</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer">
+			<ul class="credits-list">
+				<li class="credits-line">
+					<img class="icon" src="medias/scroll.png">
+					<a href="https://www.flaticon.com/free-icons/scroll" title="scroll icons">Scroll icon created by Freepik - Flaticon</a>
+				</li>
+				<li class="credits-line">
+					<img class="icon" src="medias/edit-button.png">
+					<a href="https://www.flaticon.com/free-icons/edit" title="edit icons">Edit icon created by Freepik - Flaticon</a>
+				</li>
+				<li class="credits-line">
+					<img class="icon" src="medias/trash.png">
+					<a href="https://www.flaticon.com/free-icons/trash" title="trash icons">Trash icon created by dmitri13 - Flaticon</a>
+				</li>
+				<li class="credits-line">
+					<img class="icon" src="medias/options.png">
+					<a href="https://www.flaticon.com/free-icons/more" title="more icons">More icon created by Pixel perfect - Flaticon</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

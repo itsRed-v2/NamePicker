@@ -1,0 +1,40 @@
+#foldMenu {
+    position: absolute;
+    display: none;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #0008;
+}
+
+#fold-menu-background {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.foldMenuList {
+    padding: 5px;
+}
+
+.foldMenuLine {
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 5px;
+	border-radius: 5px; 
+}
+
+.foldMenuLine:hover {
+	background-color: #ddd;
+}
+
+.dangerText {
+    color: #f74444;
+}
+
+.icon {
+    height: 1rem;
+    padding: 1px;
+    margin-right: 10px;
+}

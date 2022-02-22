@@ -1,0 +1,119 @@
+#list-section {
+	margin: 1rem;
+}
+
+.inputLine {
+    display: flex;
+}
+
+.addButton {
+	background-color: var(--light-main);
+	border: 1px solid;
+	border-radius: 5px;
+    margin-left: 5px;
+}
+
+.addButton:hover {
+	background-color: var(--intermediate-main);
+}
+
+.addButton:active {
+	background-color: var(--dark-main);
+}
+
+input {
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+input:focus {
+	outline: none;
+}
+
+.optionsButton {
+	background-color: #fff0;
+	border: 0px;
+	border-radius: 5px;
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+}
+
+.optionsButton:hover {
+	background-color: #fff6;
+}
+
+.optionsButton:active {
+	background-color: #fffa;
+}
+
+.listRow:hover > .optionsButton > .optionsIcon,
+.listRowSelected > .optionsButton > .optionsIcon {
+	opacity: 1;
+}
+
+.optionsIcon {
+	opacity: 0;
+	padding: 1px;
+	height: 1rem;
+}
+
+#list-container {
+	display: flex;
+	flex-direction: row;
+
+	margin-top: 16px;
+	border-radius: 10px;
+	border: 5px var(--dark-main) solid;
+	background-color: var(--light-main);
+
+	width: fit-content;
+	max-width: 100%;
+	box-sizing: border-box;
+
+	overflow-x: auto;
+}
+
+.nameList {
+	padding: 0px;
+	margin: 10px;
+	/* min-width: 265px; */
+}
+
+.listRow, .listRowSelected {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 5px;
+    padding-left: 10px;
+	border-radius: 5px;
+}
+
+.listRow:hover {
+	background-color: var(--dark-main-transparent);
+}
+
+.listRowSelected {
+	background-color: var(--dark-main);
+}
+
+/* .listRowSelected:hover {
+	background-color: var();
+} */
+
+.emptyListElement {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0.5;
+}
+
+.listText {
+    margin-left: 15px;
+    margin-right: 15px;
+	white-space: pre;
+}
+
+.listNumber {
+    width: 25px;
+}
