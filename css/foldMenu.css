@@ -26,11 +26,11 @@
 }
 
 .foldMenuLine:hover {
-	background-color: #ddd;
+	background-color: var(--light-gray);
 }
 
 .dangerText {
-    color: #f74444;
+    color: var(--danger-red);
 }
 
 .icon {

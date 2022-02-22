@@ -6,6 +6,10 @@
 	--intermediate-main: #2e918d;
 	--light-main: #3bb0aa;
 	--light-white: #DEF2F1; 
+
+	--light-gray: #ddd;
+	
+	--danger-red: #f74444;
 }
 
 body {
@@ -22,12 +26,8 @@ h1 {
 	color: var(--dark-main);
 }
 
-h2 {
-	color: #023e8a;	
-}
-
 strong {
-	color: #023047;
+	color: var(--dark-title);
 }
 
 ul, ol {

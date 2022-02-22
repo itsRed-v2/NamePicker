@@ -31,7 +31,7 @@ input:focus {
 }
 
 .optionsButton {
-	background-color: #fff0;
+	background: none;
 	border: 0px;
 	border-radius: 5px;
 	margin-left: auto;
@@ -96,10 +96,6 @@ input:focus {
 .listRowSelected {
 	background-color: var(--dark-main);
 }
-
-/* .listRowSelected:hover {
-	background-color: var();
-} */
 
 .emptyListElement {
 	display: flex;
