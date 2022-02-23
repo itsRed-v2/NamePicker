@@ -10,6 +10,9 @@
 	--light-gray: #ddd;
 	
 	--danger-red: #f74444;
+	--okay-green: #3bb06c;
+	--highlight-yellow-transparent: #ddc917BB;
+	--highlight-yellow: #ddc917;
 }
 
 body {

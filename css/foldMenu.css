@@ -17,15 +17,19 @@
     padding: 5px;
 }
 
-.foldMenuLine {
+.fold-menu-line, .unavailable-fold-menu-line {
     display: flex;
 	flex-direction: row;
 	align-items: center;
 	padding: 5px;
-	border-radius: 5px; 
+	border-radius: 5px;
 }
 
-.foldMenuLine:hover {
+.unavailable-fold-menu-line {
+    color: #0008;
+}
+
+.fold-menu-line:hover, .unavailable-fold-menu-line:hover {
 	background-color: var(--light-gray);
 }
 

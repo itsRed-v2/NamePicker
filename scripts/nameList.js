@@ -1,64 +1,41 @@
-const names = [
-	"Niam Barrow",
-	"Elsa Atkinson",
-	"Cecelia Andrew",
-	"Ashleigh Pitts",
-	"Arandeep Oneil",
-	// "nom vraiment vraiment très très long",
-	"Indigo Dodson",
-	"Blanka Leonard",
-	"Amos Thomas",
-	"Daria Wills",
-	"Tala Watts",
-	"Johan Brooks",
-	"Louie Whitaker",
-	"Nyla Riddle",
-	"Charlize Roman",
-	"Lily-Mai Calderon",
-];
-
-let selected = undefined;
-
 window.addEventListener("DOMContentLoaded", (event) => {
 
 	const nameInput = document.getElementById("nameInput");
 
 	// add button
 	document.getElementById("addName").addEventListener("click", (event) => {
-		addName(nameInput);
+		addPerson(nameInput);
 	});
 
 	// press enter to add
 	nameInput.addEventListener("keyup", (event) => {
 		if (event.key === "Enter") {
-			addName(nameInput);
+			addPerson(nameInput);
 		}
 	});
 
-	redrawList(names);
-
+	redrawList();
 });
 
-function addName(nameInput) {
+function addPerson(nameInput) {
 	const name = nameInput.value;
 	nameInput.value = "";
 
 	if (name == "") return;
 	
-	names.push(name)
-	redrawList(names);	
+	persons.push(new Person(name));
+	redrawList();	
 }
 
 function redrawList() {
 	const listContainer = document.getElementById("list-container");
 
+	// emptying everything
 	while (listContainer.firstChild) {
 		listContainer.removeChild(listContainer.firstChild);
 	}
 
-	if (names.length === 0) {
-		selected = undefined;
-
+	if (persons.length === 0) {
 		const textNode = document.createElement("span");
 		textNode.className = "emptyListElement";
 		textNode.appendChild(document.createTextNode("Cette liste est vide :'("));
@@ -66,16 +43,17 @@ function redrawList() {
 		addToList(textNode, listContainer, 0);
 
 	} else {
-		for (let i = 0; i < names.length; i++) {	
-			const name = names[i];
+		for (let i = 0; i < persons.length; i++) {	
+			const person = persons[i];
 
 			const node = document.createElement("li");
-			if (selected === i) node.className = "listRowSelected";
+			if (person.selected) node.className = "listRowSelected";
 			else node.className = "listRow";
+			if (person.highlighted) node.classList.add("highligthed");
 
 			node.innerHTML = `
 				<strong class="listNumber">${i + 1}.</strong>
-				<span class="listText">${name}</span>
+				<span class="list-text${person.passed ? " passed" : ""}">${person.name}</span>
 				<button class="optionsButton">
 					<img class="optionsIcon" src="medias/options.png">
 				</button>
@@ -89,8 +67,8 @@ function redrawList() {
 
 			// select on click
 			node.addEventListener("click", (event) => {
-				if (selected === i && !optionsButton.contains(event.target)) selected = undefined;
-				else selected = i;
+				if (person.selected && !optionsButton.contains(event.target)) select(undefined);
+				else select(i);
 				redrawList();
 			});
 

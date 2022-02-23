@@ -26,8 +26,7 @@ function showFoldMenu(listRow, nameIndex) {
 
 	// remove button
 	document.getElementById("removeBtn").addEventListener("click", event => {
-		selected = undefined;
-		names.splice(nameIndex, 1);
+		persons.splice(nameIndex, 1);
 		redrawList();
 		closeFoldMenu();
 	});
