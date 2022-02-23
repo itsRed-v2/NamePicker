@@ -35,6 +35,9 @@ function redrawList() {
 		listContainer.removeChild(listContainer.firstChild);
 	}
 
+	if (persons.length < 2) pickBtnEnabled(false);
+	else pickBtnEnabled(true);
+
 	if (persons.length === 0) {
 		const textNode = document.createElement("span");
 		textNode.className = "emptyListElement";

@@ -124,7 +124,7 @@ input:focus {
     width: 25px;
 }
 
-#random-pick-btn {
+.random-pick-btn {
 	background-color: var(--okay-green);
 	font-size: 20px;
 	padding: 10px;
@@ -134,10 +134,27 @@ input:focus {
 	transition: .1s;
 }
 
-#random-pick-btn:hover {
-	transform: rotate(5deg);
+.random-pick-btn:hover {
+	animation: shake .1s;
+	animation-iteration-count: 2;
 }
 
-#random-pick-btn:active {
-	transform: translateY(3px) rotate(5deg);
+.random-pick-btn:active {
+	transform: translateY(2px);
+}
+
+.random-pick-btn:disabled {
+	color: #0008;
+	opacity: .5;
+	animation: none;
+	transform: none;
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(2deg);
+	}
+	50% {
+		transform: rotate(-2deg);
+	}
 }
