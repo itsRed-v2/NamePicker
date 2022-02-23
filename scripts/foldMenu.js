@@ -5,13 +5,24 @@ function showFoldMenu(listRow, nameIndex) {
 	background.style.display = "initial";
 	foldMenu.style.display = "initial";	
 
-	const menuHeight = foldMenu.getBoundingClientRect().height;
+	let menuRect = foldMenu.getBoundingClientRect();
 	const rect = listRow.getBoundingClientRect();
 	let x = rect.right + 10;
-	let y = rect.bottom - menuHeight;
+	let y = rect.bottom - menuRect.height;
 
 	foldMenu.style.left = x + "px";
 	foldMenu.style.top = y + "px";
+
+	menuRect = foldMenu.getBoundingClientRect(); // the rect has been modified so it needs to be updated
+
+	// moving the menu if it is outside the window
+	if (menuRect.right > document.body.getBoundingClientRect().right) {		
+		x = rect.right - menuRect.width;
+		y = rect.top - menuRect.height - 10;
+
+		foldMenu.style.left = x + "px";
+		foldMenu.style.top = y + "px";
+	}
 
 	// remove button
 	document.getElementById("removeBtn").addEventListener("click", event => {
@@ -23,7 +34,7 @@ function showFoldMenu(listRow, nameIndex) {
 
 	// close menu when click outside
 	setTimeout(() => {
-		executeOnClickOutSide(background, closeFoldMenu);
+		background.addEventListener("click", closeFoldMenu);
 	});
 
 	function closeFoldMenu() {
@@ -31,16 +42,8 @@ function showFoldMenu(listRow, nameIndex) {
 		background.style.display = "none";
 
 		removeAllEventListeners(foldMenu);
+		removeAllEventListeners(background);
 	}
-}
-
-function executeOnClickOutSide(background, lamdba) {
-	const outsideClickListener = event => {
-		background.removeEventListener("click", outsideClickListener);
-		lamdba();
-	}
-
-	background.addEventListener('click', outsideClickListener);
 }
 
 function removeAllEventListeners(node) {
