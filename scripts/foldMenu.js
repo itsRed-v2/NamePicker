@@ -24,6 +24,30 @@ function showFoldMenu(listRow, nameIndex) {
 		foldMenu.style.top = y + "px";
 	}
 
+	// move up & down buttons
+	const moveUpBtn = document.getElementById("move-up-btn");
+	if (nameIndex === 0) {
+		lineEnabled(moveUpBtn, false);
+	} else {
+		lineEnabled(moveUpBtn, true);
+		moveUpBtn.addEventListener("click", event => {
+			moveInArray(persons, nameIndex, -1);
+			redrawList();
+			closeFoldMenu();
+		});
+	}
+	const moveDownBtn = document.getElementById("move-down-btn");
+	if (nameIndex === persons.length - 1) {
+		lineEnabled(moveDownBtn, false);
+	} else {
+		lineEnabled(moveDownBtn, true);
+		moveDownBtn.addEventListener("click", event => {
+			moveInArray(persons, nameIndex, 1);
+			redrawList();
+			closeFoldMenu();
+		});
+	}
+
 	// remove button
 	document.getElementById("removeBtn").addEventListener("click", event => {
 		persons.splice(nameIndex, 1);
@@ -45,7 +69,11 @@ function showFoldMenu(listRow, nameIndex) {
 	}
 }
 
-function removeAllEventListeners(node) {
-	let new_node = node.cloneNode(true);
-	node.parentNode.replaceChild(new_node, node);
+function lineEnabled(node, enabled) {
+	if (node.className !== "fold-menu-line"
+			&& node.className !== "unavailable-fold-menu-line")
+		return;
+	
+	if (enabled) node.className = "fold-menu-line";
+	else node.className = "unavailable-fold-menu-line";
 }

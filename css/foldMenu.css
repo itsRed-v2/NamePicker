@@ -29,7 +29,7 @@
     color: #0008;
 }
 
-.fold-menu-line:hover, .unavailable-fold-menu-line:hover {
+.fold-menu-line:hover {
 	background-color: var(--light-gray);
 }
 
