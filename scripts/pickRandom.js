@@ -10,6 +10,6 @@ window.addEventListener("DOMContentLoaded", event => {
 	});
 });
 
-function pickBtnEnabled(boolean) {
-	btnEnabled(document.getElementById("random-pick-btn"), boolean);
+function pickBtnSetEnabled(boolean) {
+	btnSetEnabled(document.getElementById("random-pick-btn"), boolean);
 }

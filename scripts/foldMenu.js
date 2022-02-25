@@ -8,7 +8,7 @@ function showFoldMenu(listRow, personIndex) {
 	let menuRect = foldMenu.getBoundingClientRect();
 	const rect = listRow.getBoundingClientRect();
 	let x = rect.right + 10;
-	let y = rect.bottom - menuRect.height;
+	let y = rect.top;
 
 	foldMenu.style.left = x + "px";
 	foldMenu.style.top = y + "px";
@@ -24,7 +24,8 @@ function showFoldMenu(listRow, personIndex) {
 		foldMenu.style.top = y + "px";
 	}
 
-	initializeFoldMenuBtns(personIndex);
+	initializeFoldMenuBtnEvents(personIndex);
+	renderFoldMenuBtns(personIndex);
 
 	// close menu when click outside
 	setTimeout(() => {
@@ -32,27 +33,56 @@ function showFoldMenu(listRow, personIndex) {
 	});
 }
 
-function initializeFoldMenuBtns(personIndex) {
+function renderFoldMenuBtns(personIndex) {
 	// move up button
 	const moveUpBtn = document.getElementById("move-up-btn");
-	
-	btnEnabled(moveUpBtn, personIndex !== 0);
+	btnSetEnabled(moveUpBtn, personIndex !== 0);
 
-	moveUpBtn.addEventListener("click", event => {
+	// move down button
+	const moveDownBtn = document.getElementById("move-down-btn");
+	btnSetEnabled(moveDownBtn, personIndex !== persons.length - 1);
+
+	// passed button
+	const person = persons[personIndex];
+
+	const passedBtn = document.getElementById("set-passed-btn");
+	const notPassedBtn = document.getElementById("set-not-passed-btn");
+	if (person.passed) {
+		passedBtn.style.display = "";
+		notPassedBtn.style.display = "none";
+	} else {
+		passedBtn.style.display = "none";
+		notPassedBtn.style.display = "";
+	}
+}
+
+function initializeFoldMenuBtnEvents(personIndex) {
+	// move up button
+	document.getElementById("move-up-btn").addEventListener("click", event => {
 		moveInArray(persons, personIndex, -1);
 		redrawList();
 		closeFoldMenu();
 	});
 
 	// move down button
-	const moveDownBtn = document.getElementById("move-down-btn");
-
-	btnEnabled(moveDownBtn, personIndex !== persons.length - 1);
-
-	moveDownBtn.addEventListener("click", event => {
+	document.getElementById("move-down-btn").addEventListener("click", event => {
 		moveInArray(persons, personIndex, 1);
 		redrawList();
 		closeFoldMenu();
+	});
+
+	// passed button
+	const person = persons[personIndex];
+
+	document.getElementById("set-passed-btn").addEventListener("click", event => {
+		person.passed = false;
+		redrawList();
+		renderFoldMenuBtns(personIndex);
+	});
+	document.getElementById("set-not-passed-btn").addEventListener("click", event => {
+		person.passed = true;
+		redrawList();
+		renderFoldMenuBtns(personIndex);
 	});
 
 	// remove button

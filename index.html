@@ -21,7 +21,7 @@
 	
 	<body>
 		<div class="bandeau">
-			<h1 class="mainTitle">NamePicker</h1>
+			<h1 class="mainTitle">Name Picker</h1>
 		</div>
 
 		<div id="list-section">
@@ -35,37 +35,38 @@
 			<div id="list-container">
 			</div>
 
-			<button id="random-pick-btn" class="random-pick-btn">Pick random</button>
+			<button id="random-pick-btn" class="random-pick-btn">Tirer au sort</button>
 		</div>
 	
 		<div id="fold-menu-background"></div>
 		<div id="foldMenu">
-			<ul class="foldMenuList">
-				<li>
-					<button class="fold-menu-btn" id="move-up-btn">
-						<img class="icon" src="medias/up-arrow.png">
-						<span>Move up</span>
-					</button>
-				</li>
-				<li>
-					<button class="fold-menu-btn" id="move-down-btn">
-						<img class="icon" src="medias/down-arrow.png">
-						<span>Move down</span>
-					</button>
-				</li>
-				<li>
-					<button class="fold-menu-btn" id="renameBtn" disabled="true" title="indisponible">
-						<img class="icon" src="medias/edit-button.png">
-						<span>Rename</span>
-					</button>
-				</li>
-				<li>
-					<button class="fold-menu-btn" id="removeBtn">
-						<img class="icon" src="medias/trash.png">
-						<span class="dangerText">Delete</span>
-					</button>
-				</li>
-			</ul>
+			<button class="fold-menu-btn" id="move-up-btn">
+				<img class="icon" src="medias/up-arrow.png">
+				<span>Haut</span>
+			</button>
+			<button class="fold-menu-btn" id="move-down-btn">
+				<img class="icon" src="medias/down-arrow.png">
+				<span>Bas</span>
+			</button>
+			<button class="fold-menu-btn" id="renameBtn" disabled="true" title="indisponible">
+				<img class="icon" src="medias/edit-button.png">
+				<span>Renommer</span>
+			</button>
+			<button class="fold-menu-btn" id="removeBtn">
+				<img class="icon" src="medias/trash.png">
+				<span class="dangerText">Supprimer</span>
+			</button>
+			
+			<div class="separator"></div>
+
+			<button class="fold-menu-btn" id="set-passed-btn">
+				<img class="icon" src="medias/checked.png">
+				<span>Passé</span>
+			</button>
+			<button class="fold-menu-btn" id="set-not-passed-btn">
+				<img class="icon" src="medias/unchecked.png">
+				<span>Non passé</span>
+			</button>
 		</div>
 
 		<div class="footer">
@@ -93,6 +94,14 @@
 				<li class="credits-line">
 					<img class="icon" src="medias/down-arrow.png">
 					<a href="https://www.flaticon.com/free-icons/check" title="check icons" target="_blank" rel="noopener noreferrer">Check icon created by dmitri13 - Flaticon</a>
+				</li>
+				<li class="credits-line">
+					<img class="icon" src="medias/checked.png">
+					<a href="https://www.flaticon.com/free-icons/check-box" title="check box icons" target="_blank" rel="noopener noreferrer">Check box icon created by apien - Flaticon</a>
+				</li>
+				<li class="credits-line">
+					<img class="icon" src="medias/unchecked.png">
+					<a href="https://www.flaticon.com/free-icons/times-square" title="times square icons" target="_blank" rel="noopener noreferrer">Times square icon created by Ferdinand - Flaticon</a>
 				</li>
 			</ul>
 		</div>

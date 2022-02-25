@@ -22,7 +22,7 @@ function removeAllEventListeners(node) {
  * @param {Node} btn The button to enable/disable
  * @param {Boolean} enabled The boolean that determines if the button must be enabled or disabled
  */
-function btnEnabled(btn, enabled) {
+function btnSetEnabled(btn, enabled) {
 	if (enabled) btn.removeAttribute("disabled");
 	else btn.setAttribute("disabled", "true");
 }

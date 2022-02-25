@@ -10,8 +10,8 @@ function redrawList() {
 		listContainer.removeChild(listContainer.firstChild);
 	}
 
-	if (persons.length < 2) pickBtnEnabled(false);
-	else pickBtnEnabled(true);
+	if (persons.length < 2) pickBtnSetEnabled(false);
+	else pickBtnSetEnabled(true);
 
 	if (persons.length === 0) {
 		const textNode = document.createElement("span");
@@ -36,10 +36,12 @@ function createPersonNode(index) {
 		node.className = "listRow";
 	if (person.highlighted)
 		node.classList.add("highligthed");
+	if (person.passed)
+		node.classList.add("passed");
 
 	node.innerHTML = `
-		<strong class="listNumber">${index + 1}.</strong>
-		<span class="list-text${person.passed ? " passed" : ""}">${person.name}</span>
+		<strong class="list-number">${index + 1}.</strong>
+		<span class="list-text">${person.name}</span>
 		<button class="optionsButton">
 			<img class="optionsIcon" src="medias/options.png">
 		</button>
