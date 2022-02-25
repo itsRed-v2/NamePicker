@@ -11,8 +11,5 @@ window.addEventListener("DOMContentLoaded", event => {
 });
 
 function pickBtnEnabled(boolean) {
-	const pickBtn = document.getElementById("random-pick-btn");
-
-	if (boolean) pickBtn.removeAttribute("disabled");
-	else pickBtn.setAttribute("disabled", "disabled");
+	btnEnabled(document.getElementById("random-pick-btn"), boolean);
 }

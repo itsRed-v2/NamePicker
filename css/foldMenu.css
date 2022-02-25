@@ -1,9 +1,10 @@
 #foldMenu {
     position: absolute;
     display: none;
+    
     border-radius: 10px;
     background-color: white;
-    box-shadow: 5px 5px 10px #0008;
+    box-shadow: 5px 5px 10px #0008;   
 }
 
 #fold-menu-background {
@@ -17,20 +18,32 @@
     padding: 5px;
 }
 
-.fold-menu-line, .unavailable-fold-menu-line {
+.fold-menu-btn {
     display: flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 5px;
+
+    width: 100%;
+    padding: 5px;
+
+    border: none;
 	border-radius: 5px;
+    background: none;
 }
-
-.unavailable-fold-menu-line {
-    color: #0008;
-}
-
-.fold-menu-line:hover {
+.fold-menu-btn:hover {
 	background-color: var(--light-gray);
+}
+
+.fold-menu-btn:disabled {
+    opacity: .5;
+}
+.fold-menu-btn:disabled:hover {
+	background: none;
+}
+
+.fold-menu-btn > span {
+    margin-right: 5px;
+    white-space: nowrap;
 }
 
 .dangerText {

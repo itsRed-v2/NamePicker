@@ -1,4 +1,4 @@
-function showFoldMenu(listRow, nameIndex) {
+function showFoldMenu(listRow, personIndex) {
 	const foldMenu = document.getElementById("foldMenu");
 	const background = document.getElementById("fold-menu-background");
 
@@ -18,62 +18,58 @@ function showFoldMenu(listRow, nameIndex) {
 	// moving the menu if it is outside the window
 	if (menuRect.right > document.body.getBoundingClientRect().right) {		
 		x = rect.right - menuRect.width;
-		y = rect.top - menuRect.height - 10;
+		y = rect.bottom + 10;
 
 		foldMenu.style.left = x + "px";
 		foldMenu.style.top = y + "px";
 	}
 
-	// move up & down buttons
-	const moveUpBtn = document.getElementById("move-up-btn");
-	if (nameIndex === 0) {
-		lineEnabled(moveUpBtn, false);
-	} else {
-		lineEnabled(moveUpBtn, true);
-		moveUpBtn.addEventListener("click", event => {
-			moveInArray(persons, nameIndex, -1);
-			redrawList();
-			closeFoldMenu();
-		});
-	}
-	const moveDownBtn = document.getElementById("move-down-btn");
-	if (nameIndex === persons.length - 1) {
-		lineEnabled(moveDownBtn, false);
-	} else {
-		lineEnabled(moveDownBtn, true);
-		moveDownBtn.addEventListener("click", event => {
-			moveInArray(persons, nameIndex, 1);
-			redrawList();
-			closeFoldMenu();
-		});
-	}
-
-	// remove button
-	document.getElementById("removeBtn").addEventListener("click", event => {
-		persons.splice(nameIndex, 1);
-		redrawList();
-		closeFoldMenu();
-	});
+	initializeFoldMenuBtns(personIndex);
 
 	// close menu when click outside
 	setTimeout(() => {
 		background.addEventListener("click", closeFoldMenu);
 	});
-
-	function closeFoldMenu() {
-		foldMenu.style.display = "none";
-		background.style.display = "none";
-
-		removeAllEventListeners(foldMenu);
-		removeAllEventListeners(background);
-	}
 }
 
-function lineEnabled(node, enabled) {
-	if (node.className !== "fold-menu-line"
-			&& node.className !== "unavailable-fold-menu-line")
-		return;
+function initializeFoldMenuBtns(personIndex) {
+	// move up button
+	const moveUpBtn = document.getElementById("move-up-btn");
 	
-	if (enabled) node.className = "fold-menu-line";
-	else node.className = "unavailable-fold-menu-line";
+	btnEnabled(moveUpBtn, personIndex !== 0);
+
+	moveUpBtn.addEventListener("click", event => {
+		moveInArray(persons, personIndex, -1);
+		redrawList();
+		closeFoldMenu();
+	});
+
+	// move down button
+	const moveDownBtn = document.getElementById("move-down-btn");
+
+	btnEnabled(moveDownBtn, personIndex !== persons.length - 1);
+
+	moveDownBtn.addEventListener("click", event => {
+		moveInArray(persons, personIndex, 1);
+		redrawList();
+		closeFoldMenu();
+	});
+
+	// remove button
+	document.getElementById("removeBtn").addEventListener("click", event => {
+		persons.splice(personIndex, 1);
+		redrawList();
+		closeFoldMenu();
+	});
+}
+
+function closeFoldMenu() {
+	const foldMenu = document.getElementById("foldMenu");
+	const background = document.getElementById("fold-menu-background");
+
+	foldMenu.style.display = "none";
+	background.style.display = "none";
+
+	removeAllEventListeners(foldMenu);
+	removeAllEventListeners(background);
 }
