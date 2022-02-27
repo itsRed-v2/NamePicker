@@ -1,4 +1,4 @@
-#foldMenu {
+#fold-menu {
     position: absolute;
     display: none;
     
@@ -44,7 +44,7 @@
     white-space: nowrap;
 }
 
-.dangerText {
+.danger-text {
     color: var(--danger-red);
 }
 

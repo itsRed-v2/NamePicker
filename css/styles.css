@@ -55,18 +55,16 @@ button, input {
 }
 
 .bandeau {
-	padding-top: 10px;
-	padding-bottom: 10px;
 	width: 100%;
 	background-color: var(--dark-title);
 	display: flex;
 	flex-direction: row;
 }
 
-.mainTitle {
+.main-title {
 	color: var(--light-main);
 	font-size: 40px;
-	margin: 26.8px;
+	margin: 35px;
 }
 
 .footer {

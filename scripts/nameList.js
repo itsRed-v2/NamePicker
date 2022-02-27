@@ -15,7 +15,7 @@ function redrawList() {
 
 	if (persons.length === 0) {
 		const textNode = document.createElement("span");
-		textNode.className = "emptyListElement";
+		textNode.className = "empty-list-element";
 		textNode.appendChild(document.createTextNode("Cette liste est vide :'("));
 		
 		addPersonNode(textNode);
@@ -31,9 +31,9 @@ function createPersonNode(index) {
 
 	const node = document.createElement("li");
 	if (person.selected)
-		node.className = "listRowSelected";
+		node.className = "list-row-selected";
 	else
-		node.className = "listRow";
+		node.className = "list-row";
 	if (person.highlighted)
 		node.classList.add("highligthed");
 	if (person.passed)
@@ -42,13 +42,13 @@ function createPersonNode(index) {
 	node.innerHTML = `
 		<strong class="list-number">${index + 1}.</strong>
 		<span class="list-text">${person.name}</span>
-		<button class="optionsButton">
-			<img class="optionsIcon" src="medias/options.png">
+		<button class="options-button">
+			<img class="options-icon" src="medias/options.png">
 		</button>
 	`;
 
 	// options button (3dots button)
-	let optionsButton = node.getElementsByClassName("optionsButton")[0];
+	let optionsButton = node.getElementsByClassName("options-button")[0];
 	optionsButton.addEventListener("click", event => {
 		showFoldMenu(node, index);
 	});
@@ -73,7 +73,7 @@ function addPersonNode(node) {
 
 	if (!list || list.childNodes.length >= 10) {
 		list = document.createElement("ul");
-		list.className = "nameList";
+		list.className = "name-list";
 		listContainer.appendChild(list);
 	}
 

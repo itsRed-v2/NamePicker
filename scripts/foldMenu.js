@@ -1,5 +1,5 @@
 function showFoldMenu(listRow, personIndex) {
-	const foldMenu = document.getElementById("foldMenu");
+	const foldMenu = document.getElementById("fold-menu");
 	const background = document.getElementById("fold-menu-background");
 
 	background.style.display = "initial";
@@ -86,7 +86,7 @@ function initializeFoldMenuBtnEvents(personIndex) {
 	});
 
 	// remove button
-	document.getElementById("removeBtn").addEventListener("click", event => {
+	document.getElementById("remove-btn").addEventListener("click", event => {
 		persons.splice(personIndex, 1);
 		redrawList();
 		closeFoldMenu();
@@ -94,7 +94,7 @@ function initializeFoldMenuBtnEvents(personIndex) {
 }
 
 function closeFoldMenu() {
-	const foldMenu = document.getElementById("foldMenu");
+	const foldMenu = document.getElementById("fold-menu");
 	const background = document.getElementById("fold-menu-background");
 
 	foldMenu.style.display = "none";

@@ -2,22 +2,22 @@
 	margin: 1rem;
 }
 
-.inputLine {
+.input-line {
     display: flex;
 }
 
-.addButton {
+.add-button {
 	background-color: var(--light-main);
 	border: 1px solid;
 	border-radius: 5px;
     margin-left: 5px;
 }
 
-.addButton:hover {
+.add-button:hover {
 	background-color: var(--intermediate-main);
 }
 
-.addButton:active {
+.add-button:active {
 	background-color: var(--dark-main);
 }
 
@@ -30,7 +30,7 @@ input:focus {
 	outline: none;
 }
 
-.optionsButton {
+.options-button {
 	background: none;
 	border: 0px;
 	border-radius: 5px;
@@ -39,20 +39,20 @@ input:focus {
 	align-items: center;
 }
 
-.optionsButton:hover {
+.options-button:hover {
 	background-color: #fff6;
 }
 
-.optionsButton:active {
+.options-button:active {
 	background-color: #fffa;
 }
 
-.listRow:hover > .optionsButton > .optionsIcon,
-.listRowSelected > .optionsButton > .optionsIcon {
+.list-row:hover > .options-button > .options-icon,
+.list-row-selected > .options-button > .options-icon {
 	opacity: 1;
 }
 
-.optionsIcon {
+.options-icon {
 	opacity: 0;
 	padding: 1px;
 	height: 1rem;
@@ -75,12 +75,12 @@ input:focus {
 	overflow-x: auto;
 }
 
-.nameList {
+.name-list {
 	padding: 0px;
 	margin: 10px;
 }
 
-.listRow, .listRowSelected {
+.list-row, .list-row-selected {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -89,22 +89,22 @@ input:focus {
 	border-radius: 5px;
 }
 
-.listRow:hover {
+.list-row:hover {
 	background-color: var(--dark-main-transparent);
 }
 
-.listRowSelected {
+.list-row-selected {
 	background-color: var(--dark-main);
 }
 
-.listRow.highligthed {
+.list-row.highligthed {
 	background-color: var(--highlight-yellow-transparent);
 }
-.listRowSelected.highligthed {
+.list-row-selected.highligthed {
 	background-color: var(--highlight-yellow);
 }
 
-.emptyListElement {
+.empty-list-element {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -117,10 +117,10 @@ input:focus {
 	white-space: nowrap;
 }
 
-.listRow.passed > .list-text,
-.listRowSelected.passed > .list-text,
-.listRow.passed > .list-number,
-.listRowSelected.passed > .list-number {
+.list-row.passed > .list-text,
+.list-row-selected.passed > .list-text,
+.list-row.passed > .list-number,
+.list-row-selected.passed > .list-number {
 	opacity: .5;
 }
 

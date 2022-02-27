@@ -1,9 +1,9 @@
 window.addEventListener("DOMContentLoaded", event => {
 	
-	const nameInput = document.getElementById("nameInput");
+	const nameInput = document.getElementById("name-input");
 
 	// add button
-	document.getElementById("addName").addEventListener("click", (event) => {
+	document.getElementById("add-name-btn").addEventListener("click", (event) => {
 		addPerson(nameInput);
 	});
 
