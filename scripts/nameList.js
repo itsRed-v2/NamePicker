@@ -4,22 +4,26 @@ window.addEventListener("DOMContentLoaded", event => {
 
 function redrawList() {
 	const listContainer = document.getElementById("list-container");
+	const info = document.getElementById("pick-info-bubble");
 
 	// emptying everything
 	while (listContainer.firstChild) {
 		listContainer.removeChild(listContainer.firstChild);
 	}
 
-	if (persons.length < 2) pickBtnSetEnabled(false);
-	else pickBtnSetEnabled(true);
+	pickBtnSetEnabled(getNonPassed().length !== 0)
 
 	if (persons.length === 0) {
+		info.textContent = "La liste est vide !";
+
 		const textNode = document.createElement("span");
 		textNode.className = "empty-list-element";
-		textNode.appendChild(document.createTextNode("Cette liste est vide :'("));
+		textNode.textContent = "Cette liste est vide :'(";
 		
 		addPersonNode(textNode);
 	} else {
+		info.textContent = "Tout le monde est passé !";
+		
 		for (let personIndex = 0; personIndex < persons.length; personIndex++) {	
 			createPersonNode(personIndex);
 		}
@@ -58,7 +62,7 @@ function createPersonNode(index) {
 		if (person.selected && !optionsButton.contains(event.target))
 			select(undefined);
 		else
-			select(index);
+			select(person);
 		redrawList();
 	});
 

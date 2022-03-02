@@ -9,16 +9,20 @@ class Person {
 
 const persons = [];
 
-function select(index) {
+function select(person) {
 	for (let person of persons) {
 		person.selected = false;
 	}
-	if (persons[index]) persons[index].selected = true;
+	if (person) person.selected = true;
 }
 
-function highlight(index) {
+function highlight(person) {
 	for (let person of persons) {
 		person.highlighted = false;
 	}
-	if (persons[index]) persons[index].highlighted = true;
+	if (person) person.highlighted = true;
+}
+
+function getNonPassed() {
+	return persons.filter(person => !person.passed);
 }

@@ -2,9 +2,12 @@ window.addEventListener("DOMContentLoaded", event => {
 	
 	const pickBtn = document.getElementById("random-pick-btn");
 	pickBtn.addEventListener("click", event => {
-		let picked = Math.floor(Math.random() * persons.length);
+		const nonPassed = getNonPassed();
+		
+		let picked = nonPassed[Math.floor(Math.random() * nonPassed.length)];
+
 		highlight(picked);
-		persons[picked].passed = true;
+		picked.passed = true;
 
 		redrawList();
 	});
@@ -12,4 +15,5 @@ window.addEventListener("DOMContentLoaded", event => {
 
 function pickBtnSetEnabled(boolean) {
 	btnSetEnabled(document.getElementById("random-pick-btn"), boolean);
+	btnSetEnabled(document.getElementById("mekdad-pick-btn"), boolean);
 }
