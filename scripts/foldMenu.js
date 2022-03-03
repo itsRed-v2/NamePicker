@@ -43,51 +43,38 @@ function renderFoldMenuBtns(personIndex) {
 	btnSetEnabled(moveDownBtn, personIndex !== persons.length - 1);
 
 	// passed button
-	const person = persons[personIndex];
-
-	const passedBtn = document.getElementById("set-passed-btn");
-	const notPassedBtn = document.getElementById("set-not-passed-btn");
-	if (person.passed) {
-		passedBtn.style.display = "";
-		notPassedBtn.style.display = "none";
-	} else {
-		passedBtn.style.display = "none";
-		notPassedBtn.style.display = "";
-	}
+	const passed = persons[personIndex].passed;
+	document.getElementById("set-passed-btn").style.display = passed ? "" : "none";
+	document.getElementById("set-not-passed-btn").style.display = passed ? "none" : "";
 }
 
 function initializeFoldMenuBtnEvents(personIndex) {
 	// move up button
 	document.getElementById("move-up-btn").addEventListener("click", event => {
-		moveInArray(persons, personIndex, -1);
+		movePerson(personIndex, -1);
 		redrawList();
 		closeFoldMenu();
 	});
 
 	// move down button
 	document.getElementById("move-down-btn").addEventListener("click", event => {
-		moveInArray(persons, personIndex, 1);
+		movePerson(personIndex, 1);
 		redrawList();
 		closeFoldMenu();
 	});
 
-	// passed button
-	const person = persons[personIndex];
-
-	document.getElementById("set-passed-btn").addEventListener("click", event => {
-		person.passed = false;
+	// passed buttons
+	const passedBtnEvent = event => {
+		togglePassed(persons[personIndex]);
 		redrawList();
 		renderFoldMenuBtns(personIndex);
-	});
-	document.getElementById("set-not-passed-btn").addEventListener("click", event => {
-		person.passed = true;
-		redrawList();
-		renderFoldMenuBtns(personIndex);
-	});
+	};
+	document.getElementById("set-passed-btn").addEventListener("click", passedBtnEvent);
+	document.getElementById("set-not-passed-btn").addEventListener("click", passedBtnEvent);
 
 	// remove button
 	document.getElementById("remove-btn").addEventListener("click", event => {
-		persons.splice(personIndex, 1);
+		removePerson(personIndex);
 		redrawList();
 		closeFoldMenu();
 	});

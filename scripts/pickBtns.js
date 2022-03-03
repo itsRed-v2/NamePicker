@@ -1,17 +1,15 @@
-window.addEventListener("DOMContentLoaded", event => {
-	
+function initializePickBtns() {
 	const pickBtn = document.getElementById("random-pick-btn");
 	pickBtn.addEventListener("click", event => {
 		const nonPassed = getNonPassed();
-		
-		let picked = nonPassed[Math.floor(Math.random() * nonPassed.length)];
+		const picked = nonPassed[Math.floor(Math.random() * nonPassed.length)];
 
 		highlight(picked);
-		picked.passed = true;
+		setPassed(picked, true);
 
 		redrawList();
 	});
-});
+}
 
 function pickBtnSetEnabled(boolean) {
 	btnSetEnabled(document.getElementById("random-pick-btn"), boolean);

@@ -1,7 +1,3 @@
-window.addEventListener("DOMContentLoaded", event => {
-	redrawList();
-});
-
 function redrawList() {
 	const listContainer = document.getElementById("list-container");
 	const info = document.getElementById("pick-info-bubble");

@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", event => {
+function initializeNameInput() {
 	
 	const nameInput = document.getElementById("name-input");
 
@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", event => {
 	
 		if (name == "") return;
 		
-		persons.push(new Person(name));
+		createPerson(name);
 		redrawList();	
 	}
-});
+}
