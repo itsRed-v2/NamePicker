@@ -1,8 +1,6 @@
 function loadGroupsFromStorage() {
 	groups = JSON.parse(localStorage.getItem("groups"));
 	if (!groups) groups = [];
-
-	loadGroup(groups[0]); // temporary
 }
 
 function saveGroups() {

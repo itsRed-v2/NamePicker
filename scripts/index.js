@@ -5,7 +5,8 @@ window.addEventListener("DOMContentLoaded", event => {
     initializeGroupName();
     initializeNameInput();
     initializePickBtns();
+    initializeBackBtn();
 
-	redrawList();
+    drawGrpList();
 
 });

@@ -1,0 +1,47 @@
+#groups-section {
+    padding: 1rem;
+    height: 100vh;
+    flex-shrink: 0;
+
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+#groups-section.slide-up {
+    transform: translateY(-100vh);
+}
+
+.group-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 150%;
+}
+
+.group-card {
+    display: flex;
+    align-items: center;
+
+    width: 10em;
+    min-height: 5em;
+    padding: 15px;
+    box-sizing: border-box;
+
+    border-radius: 10px;
+    background-color: var(--light-main);
+
+    transition: .5s;
+    box-shadow: 0px 2px 5px #000A;
+}
+
+.group-card:hover:not(:active) {
+    box-shadow: 0px 5px 10px #000A;
+    transform: translateY(-5px);
+}
+
+.group-card-text {
+    white-space: pre-wrap;
+    text-align: center;
+    width: 100%;
+    color: var(--dark-title);
+}

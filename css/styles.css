@@ -54,17 +54,22 @@ button, input {
 	margin: 1rem;
 }
 
-.bandeau {
-	width: 100%;
-	background-color: var(--dark-title);
+.header {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+
+	width: 100%;
+	height: 110px;
+	flex-shrink: 0;
+
+	background-color: var(--dark-title);
 }
 
 .main-title {
 	color: var(--light-main);
 	font-size: 40px;
-	margin: 35px;
+	margin-left: 35px;
 }
 
 .footer {
@@ -84,4 +89,10 @@ button, input {
 	flex-direction: row;
 	align-items: center;
 	padding: 1px;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
