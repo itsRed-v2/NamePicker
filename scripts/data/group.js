@@ -14,6 +14,8 @@ function createGroup(name, persons = []) {
 function loadGroup(group) {
     persons = group.persons;
     currentGroup = group;
+    displayGroupName(group);
+
     redrawList();
 }
 
