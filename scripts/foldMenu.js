@@ -28,9 +28,10 @@ function showFoldMenu(listRow, personIndex) {
 	renderFoldMenuBtns(personIndex);
 
 	// close menu when click outside
-	setTimeout(() => {
-		background.addEventListener("click", closeFoldMenu);
-	});
+	background.addEventListener("click", closeFoldMenu);
+
+	// close menu on escape
+	document.addEventListener("keyup", escapeListener);
 }
 
 function renderFoldMenuBtns(personIndex) {
@@ -89,4 +90,11 @@ function closeFoldMenu() {
 
 	removeAllEventListeners(foldMenu);
 	removeAllEventListeners(background);
+	document.removeEventListener("keyup", escapeListener);
 }
+
+const escapeListener = event => {
+	if (event.key === "Escape") {
+		closeFoldMenu();
+	}
+};
