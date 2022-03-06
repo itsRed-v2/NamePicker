@@ -46,6 +46,7 @@
 
 .group-card-text {
     white-space: pre-wrap;
+    overflow-wrap: break-word;
     text-align: center;
     width: 100%;
     color: var(--dark-title);
