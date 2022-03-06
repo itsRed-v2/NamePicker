@@ -34,9 +34,14 @@
     box-shadow: 0px 2px 5px #000A;
 }
 
-.group-card:hover:not(:active) {
+.group-card:hover {
     box-shadow: 0px 5px 10px #000A;
     transform: translateY(-5px);
+}
+
+.group-card:active {
+    box-shadow: 0px 1px 3px #000A;
+    transform: translateY(0px);
 }
 
 .group-card-text {
@@ -44,4 +49,45 @@
     text-align: center;
     width: 100%;
     color: var(--dark-title);
+}
+
+.grp-add-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 10em;
+    min-height: 5em;
+    box-sizing: border-box;
+
+    border: 2px #0001 dotted;
+    border-radius: 10px;
+}
+
+.grp-add-btn {
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+
+    background-color: var(--okay-green);
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 5px #000A;
+
+    transition: .3s;
+}
+
+.grp-add-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px #000A;
+}
+
+.grp-add-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 1px 3px #000A;
+}
+
+.grp-add-btn > img {
+    height: 100%;
 }

@@ -8,6 +8,7 @@ function drawGrpList() {
     for (const grp of groups) {
         createGrpNode(grp);
     }
+    createAddBtnNode();
 }
 
 function createGrpNode(group) {
@@ -19,6 +20,27 @@ function createGrpNode(group) {
 
     node.addEventListener("click", event => {
         loadGroup(group);
+    });
+
+    document.getElementById("group-container").appendChild(node);
+}
+
+function createAddBtnNode() {
+    const node = document.createElement("div");
+    node.className = "grp-add-btn-container";
+    node.innerHTML = `
+        <button class="grp-add-btn">
+            <img src="medias/add.png">
+        </button>
+    `;
+
+    node.addEventListener("click", event => {
+        loadGroup(createGroup("nouveau groupe"));
+        setTimeout(() => {
+            const input = document.getElementById("group-name");
+            input.focus();
+            input.select();
+        }, 500);
     });
 
     document.getElementById("group-container").appendChild(node);

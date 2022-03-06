@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", event => {
     initializeNameInput();
     initializePickBtns();
     initializeBackBtn();
+    initializeDeleteGrpBtn();
 
     drawGrpList();
 

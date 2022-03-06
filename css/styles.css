@@ -13,6 +13,8 @@
 	--okay-green: #3bb06c;
 	--highlight-yellow-transparent: #ddc917BB;
 	--highlight-yellow: #ddc917;
+
+	--header-height: 110px;
 }
 
 body {
@@ -60,7 +62,7 @@ button, input {
 	align-items: center;
 
 	width: 100%;
-	height: 110px;
+	height: var(--header-height);
 	flex-shrink: 0;
 
 	background-color: var(--dark-title);
@@ -73,7 +75,7 @@ button, input {
 }
 
 .footer {
-	display: flex;
+	display: none; /* temporary */
 	margin-top: auto;
 }
 

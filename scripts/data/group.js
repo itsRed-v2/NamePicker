@@ -28,3 +28,9 @@ function loadGroupByName(name) {
         }
     }
 }
+
+function deleteGroup(group) {
+    const index = groups.indexOf(group);
+    groups.splice(index, 1);
+	saveGroups();
+}
