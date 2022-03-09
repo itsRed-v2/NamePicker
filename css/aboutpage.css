@@ -1,0 +1,40 @@
+h2 {
+	color: var(--dark-main);
+}
+
+.about-main {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin: 1rem auto;	
+}
+
+.back-btn {
+	height: 40%;
+	margin: 30px;
+}
+
+.back-btn > img {
+	height: 100%;
+}
+
+.icon {
+    height: 1rem;
+    padding: 1px;
+    margin-right: 10px;
+}
+
+.credits-list {
+	padding: 10px;
+	width: fit-content;
+
+	border-radius: 10px;
+	background-color: var(--light-white);
+}
+
+.credits-line {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1px;
+}

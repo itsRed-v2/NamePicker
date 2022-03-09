@@ -44,55 +44,6 @@ button, input {
 	font-size: inherit;
 }
 
-/* unused */
-.page {
-	display: flex;
-	flex-direction: row;
-	margin: 10px;
-}
-
-/* unused */
-.column {
-	margin: 1rem;
-}
-
-.header {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-
-	width: 100%;
-	height: var(--header-height);
-	flex-shrink: 0;
-
-	background-color: var(--dark-title);
-}
-
-.main-title {
-	color: var(--light-main);
-	font-size: 40px;
-	margin-left: 35px;
-}
-
-.footer {
-	display: none; /* temporary */
-	margin-top: auto;
-}
-
-.credits-list {
-	padding: 10px;
-	margin: 1rem;
-	border-radius: 10px;
-	background-color: var(--light-white);
-}
-
-.credits-line {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding: 1px;
-}
-
 .main {
 	display: flex;
 	flex-direction: column;
