@@ -17,30 +17,26 @@
 	margin-left: 35px;
 }
 
-.about {
-	margin: 30px;
-	height: 50px;
-	width: 50px;
-
-	background-image: url(../medias/about.svg);
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-
 .header-icon {
 	position: relative;
 	display: flex;
 	justify-content: center;
 
 	transition: .1s;
+
+	height: 40%;
+	margin: 0 30px;
+}
+
+.header-icon > img {
+	height: 100%;
 }
 
 .header-icon:hover {
 	transform: translateY(-30%);
 }
 
-.header-icon .header-icon-text {
+.header-icon > span {
 	position: absolute;
 	bottom: 0;
 
@@ -54,7 +50,7 @@
 	transition: .1s;
 }
 
-.header-icon:hover .header-icon-text {
+.header-icon:hover > span {
 	opacity: 1;
 	transform: translateY(100%);
 }
