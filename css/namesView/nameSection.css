@@ -4,15 +4,11 @@
 	flex-shrink: 0;
 
 	padding: 1rem;
-	height: calc(100vh - var(--header-height));
+	height: var(--main-height);
 	box-sizing: border-box;
 	overflow: auto;
 
 	transition: .5s;
-}
-
-#names-section.slide-up {
-	transform: translateY(-100vh);
 }
 
 .title-row {
