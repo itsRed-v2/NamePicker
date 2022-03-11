@@ -44,6 +44,8 @@
 	align-items: end;
 	height: 1.3em;
 
+	white-space: nowrap;
+	
 	color: var(--dark-main);
 	font-size: 1.5rem;
 	opacity: 0;
