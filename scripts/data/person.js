@@ -6,6 +6,7 @@ function createPerson(name) {
 	};
 	persons.push(pers);
 	saveGroups();
+	redrawList();	
 	return pers;
 }
 
@@ -14,6 +15,8 @@ function select(person) {
 		person.selected = false;
 	}
 	if (person) person.selected = true;
+
+	redrawList();
 }
 
 function highlight(person) {
@@ -21,26 +24,26 @@ function highlight(person) {
 		person.highlighted = false;
 	}
 	if (person) person.highlighted = true;
+
+	redrawList();
 }
 
 function setPassed(person, boolean) {
 	person.passed = boolean;
 	saveGroups();
-}
-
-function togglePassed(person) {
-	person.passed = !person.passed;
-	saveGroups();
+	redrawList();
 }
 
 function removePerson(index) {
 	persons.splice(index, 1);
 	saveGroups();
+	redrawList();
 }
 
 function movePerson(personIndex, offset) {
 	moveInArray(persons, personIndex, offset);
 	saveGroups();
+	redrawList();
 }
 
 function getNonPassed() {

@@ -21,6 +21,5 @@ function initializeNameInput() {
 		if (name == "") return;
 		
 		createPerson(name);
-		redrawList();	
 	}
 }

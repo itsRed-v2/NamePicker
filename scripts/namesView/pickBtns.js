@@ -6,8 +6,6 @@ function initializePickBtns() {
 
 		highlight(picked);
 		setPassed(picked, true);
-
-		redrawList();
 	});
 }
 

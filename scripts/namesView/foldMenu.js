@@ -53,21 +53,19 @@ function initializeFoldMenuBtnEvents(personIndex) {
 	// move up button
 	document.getElementById("move-up-btn").addEventListener("click", event => {
 		movePerson(personIndex, -1);
-		redrawList();
 		closeFoldMenu();
 	});
 
 	// move down button
 	document.getElementById("move-down-btn").addEventListener("click", event => {
 		movePerson(personIndex, 1);
-		redrawList();
 		closeFoldMenu();
 	});
 
 	// passed buttons
 	const passedBtnEvent = event => {
-		togglePassed(persons[personIndex]);
-		redrawList();
+		const person = persons[personIndex];
+		setPassed(person, !person.passed);
 		renderFoldMenuBtns(personIndex);
 	};
 	document.getElementById("set-passed-btn").addEventListener("click", passedBtnEvent);
@@ -76,7 +74,6 @@ function initializeFoldMenuBtnEvents(personIndex) {
 	// remove button
 	document.getElementById("remove-btn").addEventListener("click", event => {
 		removePerson(personIndex);
-		redrawList();
 		closeFoldMenu();
 	});
 }

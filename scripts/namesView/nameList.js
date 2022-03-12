@@ -59,7 +59,6 @@ function createPersonNode(index) {
 			select(undefined);
 		else
 			select(person);
-		redrawList();
 	});
 
 	// adding to the list
