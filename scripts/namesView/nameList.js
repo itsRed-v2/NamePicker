@@ -23,9 +23,9 @@ function redrawList() {
 		}
 	}
 
-	const isEveryonePassed = getNonPassed().length == 0;
-	pickBtnSetEnabled(!isEveryonePassed);
-	setMarkallButtonVisibility(isEveryonePassed);
+	const passedAmount = getNonPassed().length;
+	pickBtnSetEnabled(passedAmount !== 0);
+	setMarkallButtonVisibility(passedAmount === 0 && persons.length !== 0);
 }
 
 function createPersonNode(index) {
