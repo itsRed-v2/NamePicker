@@ -1,0 +1,36 @@
+.list-btn {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	padding: 10px;
+	width: fit-content;
+
+	font-size: 20px;
+
+	border-radius: 10px;
+	border: 1px solid black;
+
+	transition: .2s;
+}
+
+.list-btn:hover:not(:disabled) {
+	filter: brightness(90%);
+}
+
+.list-btn:active:not(:disabled) {
+	filter: brightness(80%);
+	transform: translateY(2px);
+}
+
+.list-btn:disabled {
+	color: #0008;
+	opacity: .5;
+	animation: none;
+	transform: none;
+}
+
+.markall-btn {
+	background-color: var(--light-main);
+	margin-bottom: 30px;
+}

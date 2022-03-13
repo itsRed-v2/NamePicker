@@ -34,6 +34,14 @@ function setPassed(person, boolean) {
 	redrawList();
 }
 
+function setAllPassed(boolean) {
+	for (const pers of persons) {
+		pers.passed = boolean;
+	}
+	saveGroups();
+	redrawList();
+}
+
 function removePerson(index) {
 	persons.splice(index, 1);
 	saveGroups();

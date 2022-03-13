@@ -7,8 +7,6 @@ function redrawList() {
 		listContainer.removeChild(listContainer.firstChild);
 	}
 
-	pickBtnSetEnabled(getNonPassed().length !== 0)
-
 	if (persons.length === 0) {
 		info.textContent = "La liste est vide !";
 
@@ -24,6 +22,10 @@ function redrawList() {
 			createPersonNode(personIndex);
 		}
 	}
+
+	const isEveryonePassed = getNonPassed().length == 0;
+	pickBtnSetEnabled(!isEveryonePassed);
+	setMarkallButtonVisibility(isEveryonePassed);
 }
 
 function createPersonNode(index) {

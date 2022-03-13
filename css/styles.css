@@ -42,6 +42,7 @@ ul, ol {
 }
 
 button, input {
+	color: black;
 	font-size: inherit;
 }
 
