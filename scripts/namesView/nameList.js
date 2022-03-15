@@ -1,3 +1,5 @@
+let listNodes = [];
+
 function redrawList() {
 	const listContainer = document.getElementById("list-container");
 	const info = document.getElementById("pick-info-bubble");
@@ -6,6 +8,7 @@ function redrawList() {
 	while (listContainer.firstChild) {
 		listContainer.removeChild(listContainer.firstChild);
 	}
+	listNodes = [];
 
 	if (persons.length === 0) {
 		info.textContent = "La liste est vide !";
@@ -19,7 +22,8 @@ function redrawList() {
 		info.textContent = "Tout le monde est passé !";
 		
 		for (let personIndex = 0; personIndex < persons.length; personIndex++) {	
-			createPersonNode(personIndex);
+			const node = createPersonNode(personIndex);
+			listNodes.push(node);
 		}
 	}
 
@@ -52,7 +56,7 @@ function createPersonNode(index) {
 	// options button (3dots button)
 	let optionsButton = node.getElementsByClassName("options-button")[0];
 	optionsButton.addEventListener("click", event => {
-		showFoldMenu(node, index);
+		showFoldMenu(index);
 	});
 
 	// select on click
@@ -65,6 +69,8 @@ function createPersonNode(index) {
 
 	// adding to the list
 	addPersonNode(node);
+
+	return node;
 }
 
 function addPersonNode(node) {

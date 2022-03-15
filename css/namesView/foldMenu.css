@@ -1,12 +1,41 @@
 #fold-menu {
     position: absolute;
-    display: none;
     
     padding: 5px;
 
     border-radius: 10px;
     background-color: white;
-    box-shadow: 5px 5px 10px #0008;   
+    box-shadow: 5px 5px 10px #0008;  
+    
+    transition-property: visibility, opacity, transform;
+    transition-duration: .2s;
+}
+
+#fold-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+#fold-menu:not(.show) {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    
+    animation: slide-out .2s;
+}
+
+@keyframes slide-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+        visibility: hidden;
+    }
 }
 
 #fold-menu-background {
