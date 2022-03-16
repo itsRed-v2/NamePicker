@@ -1,12 +1,12 @@
 let listNodes = [];
 
 function redrawList() {
-	const listContainer = document.getElementById("list-container");
+	const list = document.getElementById("name-list");
 	const info = document.getElementById("pick-info-bubble");
 
 	// emptying everything
-	while (listContainer.firstChild) {
-		listContainer.removeChild(listContainer.firstChild);
+	while (list.firstChild) {
+		list.removeChild(list.firstChild);
 	}
 	listNodes = [];
 
@@ -74,15 +74,6 @@ function createPersonNode(index) {
 }
 
 function addPersonNode(node) {
-	const listContainer = document.getElementById("list-container");
-
-	let list = listContainer.lastChild;
-
-	if (!list || list.childNodes.length >= 10) {
-		list = document.createElement("ul");
-		list.className = "name-list";
-		listContainer.appendChild(list);
-	}
-
+	const list = document.getElementById("name-list");
 	list.appendChild(node);
 }

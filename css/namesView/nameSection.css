@@ -57,3 +57,22 @@
 .back-btn:active > img {
     transform: translateY(10px);
 }
+
+.input-row {
+    display: flex;
+}
+
+.add-button {
+	background-color: var(--light-main);
+	border: 1px solid;
+	border-radius: 5px;
+    margin-left: 5px;
+}
+
+.add-button:hover {
+	background-color: var(--intermediate-main);
+}
+
+.add-button:active {
+	background-color: var(--dark-main);
+}

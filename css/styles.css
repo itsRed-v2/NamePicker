@@ -46,6 +46,16 @@ button, input {
 	font-size: inherit;
 }
 
+input {
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+input:focus {
+	outline: none;
+}
+
+
 .main {
 	display: flex;
 	flex-direction: column;

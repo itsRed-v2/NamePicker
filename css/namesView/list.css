@@ -1,31 +1,3 @@
-.input-row {
-    display: flex;
-}
-
-.add-button {
-	background-color: var(--light-main);
-	border: 1px solid;
-	border-radius: 5px;
-    margin-left: 5px;
-}
-
-.add-button:hover {
-	background-color: var(--intermediate-main);
-}
-
-.add-button:active {
-	background-color: var(--dark-main);
-}
-
-input {
-	border-radius: 5px;
-	border: 1px solid gray;
-}
-
-input:focus {
-	outline: none;
-}
-
 .options-button {
 	background: none;
 	border: 0px;
@@ -55,25 +27,28 @@ input:focus {
 }
 
 #list-container {
-	display: flex;
-	flex-direction: row;
-	flex-shrink: 0;
-
 	border-radius: 10px;
 	border: 5px var(--dark-main) solid;
 	background-color: var(--light-main);
 
 	margin: 15px 0px;
-	width: fit-content;
-	max-width: 100%;
+	padding: 10px;
+	width: 100%;
 	box-sizing: border-box;
 
-	overflow-x: auto;
+	overflow-x: hidden;
 }
 
-.name-list {
-	padding: 0px;
-	margin: 10px;
+#name-list {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 0 20px;
+	align-content: start;
+
+	height: 300px;
 }
 
 .list-row, .list-row-selected {
