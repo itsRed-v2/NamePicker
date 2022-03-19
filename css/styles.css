@@ -25,6 +25,7 @@ body {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 	/* font-size: 20px; */
 }
 
@@ -44,6 +45,18 @@ ul, ol {
 button, input {
 	color: black;
 	font-size: inherit;
+}
+
+input, textarea {
+	border-radius: 5px;
+	border: 1px solid gray;
+	
+	font-family: inherit;
+	font-size: inherit;
+}
+
+input:focus {
+	outline: none;
 }
 
 .main {

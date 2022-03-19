@@ -18,6 +18,7 @@
 		<link href="css/namesView/pickbtns.css" rel="stylesheet" type="text/css" />
 		<link href="css/namesView/buttons.css" rel="stylesheet" type="text/css" />
 		<link href="css/namesView/delete.css" rel="stylesheet" type="text/css" />
+		<link href="css/namesView/addPopup.css" rel="stylesheet" type="text/css" />
 		
 		<script src="scripts/index.js" type="text/javascript"></script>
 		<script src="scripts/pageManager.js" type="text/javascript"></script>
@@ -30,11 +31,11 @@
 		<script src="scripts/groupsView/groupList.js" type="text/javascript"></script>
 
 		<script src="scripts/namesView/groupName.js" type="text/javascript"></script>
-		<script src="scripts/namesView/nameInput.js" type="text/javascript"></script>
 		<script src="scripts/namesView/nameList.js" type="text/javascript"></script>
 		<script src="scripts/namesView/foldMenu.js" type="text/javascript"></script>
 		<script src="scripts/namesView/pickBtns.js" type="text/javascript"></script>
 		<script src="scripts/namesView/otherBtns.js" type="text/javascript"></script>
+		<script src="scripts/namesView/addPopup.js" type="text/javascript"></script>
 	</head>
 	
 	<body>
@@ -61,10 +62,7 @@
 					</button>
 				</div>
 
-				<div class="input-row">
-					<input type="text" id="name-input" placeholder="Prénom NOM"></input>
-					<button class="add-button" id="add-name-btn">Ajouter</button>
-				</div>
+				<button id="open-popup-btn" class="open-popup-btn">Ajouter des noms</button>
 
 				<div id="list-container">
 				</div>
@@ -114,6 +112,21 @@
 				<img class="icon" src="medias/unchecked.png">
 				<span>Non passé</span>
 			</button>
+		</div>
+
+		<div id="add-popup-container" class="add-popup-container">
+			<div id="add-popup-background" class="add-popup-background"></div>
+			<div id="add-popup" class="add-popup">
+				<div class="popup-first-row">
+					<h1>Ajouter des noms</h1>
+					<button id="close-popup-btn" class="close-popup-btn">
+						<img src="medias/close.svg" alt="close">
+					</button>
+				</div>
+				<p>Pro tip: Pour ajouter plusieurs noms, entrez en un par ligne</p>
+				<textarea name="name-input-area" class="name-input-area" id="name-input-area" wrap="off" spellcheck="false"></textarea>
+				<button id="add-names-btn" class="add-names-btn">Ajouter</button>
+			</div>
 		</div>
 	</body>
 </html>
