@@ -1,3 +1,15 @@
+.fold-menu-container {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    visibility: hidden;
+}
+.fold-menu-container.show {
+    visibility: visible;
+}
+
 #fold-menu {
     position: absolute;
     
@@ -8,41 +20,22 @@
     box-shadow: 5px 5px 10px #0008;  
     
     transition-property: visibility, opacity, transform;
-    transition-duration: .2s;
-}
+    transition-duration: .3s;
 
-#fold-menu.show {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+}
+.fold-menu-container.show > #fold-menu {
+    visibility: visible;
     opacity: 1;
     transform: translateY(0);
-    visibility: visible;
+    animation: slide-in .3s;
 }
-
-#fold-menu:not(.show) {
-    opacity: 0;
-    transform: translateY(-10px);
-    visibility: hidden;
-    
-    animation: slide-out .2s;
-}
-
-@keyframes slide-out {
+@keyframes slide-in {
     from {
-        opacity: 1;
-        transform: translateY(0);
-        visibility: visible;
+        transform: translateY(-10px);
     }
-    to {
-        opacity: 0;
-        transform: translateY(10px);
-        visibility: hidden;
-    }
-}
-
-#fold-menu-background {
-    position: absolute;
-    display: none;
-    width: 100%;
-    height: 100%;
 }
 
 .fold-menu-btn {

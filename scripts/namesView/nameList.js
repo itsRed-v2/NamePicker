@@ -56,7 +56,7 @@ function createPersonNode(index) {
 	// options button (3dots button)
 	let optionsButton = node.getElementsByClassName("options-button")[0];
 	optionsButton.addEventListener("click", event => {
-		showFoldMenu(index);
+		foldMenu.show(index);
 	});
 
 	// select on click

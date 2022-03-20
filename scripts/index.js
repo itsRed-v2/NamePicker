@@ -5,8 +5,8 @@ window.addEventListener("DOMContentLoaded", event => {
     initializeGroupName();
     initializePickBtns();
     initializeOtherBtns();
-    initFoldMenuEvents();
     initializeAddPopup();
+    foldMenu = new FoldMenu();
 
     drawGrpList();
 });
