@@ -3,8 +3,7 @@ window.addEventListener("DOMContentLoaded", event => {
     loadGroupsFromStorage();
 
     initializeGroupName();
-    initializePickBtns();
-    initializeOtherBtns();
+    initializeNameViewBtns();
     initializeAddPopup();
     foldMenu = new FoldMenu();
 

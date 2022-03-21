@@ -2,7 +2,6 @@ let listNodes = [];
 
 function redrawList() {
 	const listContainer = document.getElementById("list-container");
-	const info = document.getElementById("pick-info-bubble");
 
 	// emptying everything
 	while (listContainer.firstChild) {
@@ -11,16 +10,12 @@ function redrawList() {
 	listNodes = [];
 
 	if (persons.length === 0) {
-		info.textContent = "La liste est vide !";
-
 		const textNode = document.createElement("span");
 		textNode.className = "empty-list-element";
 		textNode.textContent = "Cette liste est vide :'(";
 		
 		addPersonNode(textNode);
 	} else {
-		info.textContent = "Tout le monde est passé !";
-		
 		for (let personIndex = 0; personIndex < persons.length; personIndex++) {	
 			const node = createPersonNode(personIndex);
 			listNodes.push(node);
