@@ -1,10 +1,13 @@
 .options-button {
+	display: flex;
+	align-items: center;
+
+	margin-left: auto;
+	padding: 2px 5px;
+
 	background: none;
 	border: 0px;
 	border-radius: 5px;
-	margin-left: auto;
-	display: flex;
-	align-items: center;
 }
 
 .options-button:hover {
@@ -22,7 +25,6 @@
 
 .options-icon {
 	opacity: 0;
-	padding: 1px;
 	height: 1rem;
 }
 

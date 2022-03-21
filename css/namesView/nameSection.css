@@ -1,14 +1,6 @@
 #names-section {
 	display: flex;
 	flex-direction: column;
-	flex-shrink: 0;
-
-	padding: 1rem;
-	height: var(--main-height);
-	box-sizing: border-box;
-	overflow: auto;
-
-	transition: .5s;
 }
 
 .title-row {

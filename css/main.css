@@ -1,0 +1,19 @@
+.section {
+	padding: 1rem;
+    height: var(--main-height);
+    flex-shrink: 0;
+
+    box-sizing: border-box;
+    overflow: auto;
+    transition: .5s;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.slide-up {
+    transform: translateY(calc(var(--main-height) * -1 ));
+}
