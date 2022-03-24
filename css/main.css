@@ -1,19 +1,32 @@
-.section {
-	padding: 1rem;
-    height: var(--main-height);
-    flex-shrink: 0;
-
-    box-sizing: border-box;
-    overflow: auto;
-    transition: .5s;
-}
-
 .main {
-	display: flex;
+    position: relative;
+
+    display: flex;
 	flex-direction: column;
+
+    height: var(--main-height);
 	overflow: hidden;
 }
 
-.slide-up {
-    transform: translateY(calc(var(--main-height) * -1 ));
+.section {
+    position: absolute;
+
+	padding: 15px;
+    width: 100%;
+    height: var(--main-height);
+    box-sizing: border-box;
+    overflow: auto;
+
+    background-color: var(--main-bg-color);
+    box-shadow: 0 0 50px #000A;
+
+    visibility: visible;
+    transition: .5s;
+}
+.section.slide-down {
+    transform: translateY(calc(var(--main-height) + 50px));
+    visibility: hidden;
+}
+.section.hide {
+    visibility: hidden;
 }

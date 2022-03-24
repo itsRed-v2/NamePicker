@@ -17,7 +17,7 @@ function loadGroup(group) {
     displayGroupName(group);
 
     redrawList();
-    showNameList();
+    pageManager.showNameList();
 }
 
 function loadGroupByName(name) {

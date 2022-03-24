@@ -1,6 +1,6 @@
 function initializeNameViewBtns() {
     document.getElementById("back-btn").addEventListener("click", event => {
-        showGroupList();
+        pageManager.showGroupList();
     });
 
     document.getElementById("markall-btn").addEventListener("click", event => {
@@ -10,16 +10,16 @@ function initializeNameViewBtns() {
 
     document.getElementById("delete-grp-btn").addEventListener("click", event => {
         deleteGroup(currentGroup);
-        drawGrpList();
-        showGroupList();
+        pageManager.showGroupList();
     });
 
 	document.getElementById("random-pick-btn").addEventListener("click", event => {
-		const nonPassed = getNonPassed();
-		const picked = nonPassed[Math.floor(Math.random() * nonPassed.length)];
+        pageManager.showSelector();
+		// const nonPassed = getNonPassed();
+		// const picked = nonPassed[Math.floor(Math.random() * nonPassed.length)];
 
-		highlight(picked);
-		setPassed(picked, true);
+		// highlight(picked);
+		// setPassed(picked, true);
 	});
 }
 

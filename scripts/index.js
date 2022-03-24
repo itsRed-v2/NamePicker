@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", event => {
 
     initializeGroupName();
     initializeNameViewBtns();
+    initializeSelectorBtns();
     initializeAddPopup();
     foldMenu = new FoldMenu();
 
