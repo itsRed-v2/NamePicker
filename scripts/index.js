@@ -9,4 +9,6 @@ window.addEventListener("DOMContentLoaded", event => {
     foldMenu = new FoldMenu();
 
     drawGrpList();
+
+    setSelectorBtnsVisible(false);
 });

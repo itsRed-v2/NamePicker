@@ -1,0 +1,66 @@
+.selector-btns-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	flex-shrink: 0;
+	flex-grow: 1;
+	padding: 20px 0;
+
+	overflow: hidden;
+}
+
+.selector-btn {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	font-size: 3rem;
+	border-radius: 20px;
+	padding: 20px;
+
+	visibility: hidden;
+	transform: translateY(100vh);
+	transition: .5s;
+}
+.selector-btn.show {
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.selector-btn:hover {
+	filter: brightness(90%);
+}
+.selector-btn:active {
+	filter: brightness(80%);
+}
+
+.selector-back-btn {
+	/* background-color: var(--okay-green); */
+	background: rgb(59,176,108);
+	background: linear-gradient(135deg, rgba(59,176,108,1) 0%, rgba(59,176,152,1) 100%); 
+}
+
+.selector-back-btn > img {
+	height: 2rem;
+	transition: .2s ease;
+}
+.selector-back-btn:hover > img {
+	transform: rotate(5deg);
+	transition: .2s cubic-bezier(.18,.89,.64,3);
+}
+
+.selector-reroll-btn {
+	/* background-color: #e98800; */
+	background: rgb(233,131,0);
+	background: linear-gradient(135deg, rgba(233,131,0,1) 0%, rgba(255,186,0,1) 100%);
+}
+
+.selector-reroll-btn > img {
+	height: 3rem;
+	transition: .2s ease;
+}
+.selector-reroll-btn:hover > img {
+	transform: rotate(20deg);
+	transition: .2s cubic-bezier(.18,.89,.64,1.68);
+}

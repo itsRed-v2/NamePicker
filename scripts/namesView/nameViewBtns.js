@@ -15,11 +15,8 @@ function initializeNameViewBtns() {
 
 	document.getElementById("random-pick-btn").addEventListener("click", event => {
         pageManager.showSelector();
-		// const nonPassed = getNonPassed();
-		// const picked = nonPassed[Math.floor(Math.random() * nonPassed.length)];
-
-		// highlight(picked);
-		// setPassed(picked, true);
+        startRoll();
+        document.activeElement.blur();
 	});
 }
 

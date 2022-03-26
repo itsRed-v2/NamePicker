@@ -1,0 +1,55 @@
+#selector-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.roll-row {
+	display: flex;
+	flex-direction: column;
+}
+
+.roll-row > h1 {
+	margin: 10px auto;
+	font-size: 4rem;
+}
+
+.roll-frame {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+
+	border-radius: 10px;
+	box-shadow: inset 3px 3px 10px #000A;
+	background-color: #FFF;
+
+	overflow: hidden;
+}
+
+.roll-zone {
+	--zone-height: 7rem;
+
+	width: 100%;
+	height: var(--zone-height);
+}
+
+.roll-list {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	width: 100%;
+	top: var(--zone-height);
+
+	transform: translateY(10px);
+	transition: 5s ease transform;
+}
+
+.roll-list > span {
+	max-width: 100%;
+	height: var(--zone-height);
+
+	font-size: var(--zone-height);
+	white-space: nowrap;
+}

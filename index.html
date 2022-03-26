@@ -19,6 +19,9 @@
 		<link href="css/namesView/buttons.css" rel="stylesheet" type="text/css" />
 		<link href="css/namesView/delete.css" rel="stylesheet" type="text/css" />
 		<link href="css/namesView/addPopup.css" rel="stylesheet" type="text/css" />
+
+		<link href="css/selectorView/selectorSection.css" rel="stylesheet" type="text/css" />
+		<link href="css/selectorView/selectorButtons.css" rel="stylesheet" type="text/css" />
 		
 		<script src="scripts/index.js" type="text/javascript"></script>
 		<script src="scripts/pageManager.js" type="text/javascript"></script>
@@ -37,6 +40,7 @@
 		<script src="scripts/namesView/addPopup.js" type="text/javascript"></script>
 		
 		<script src="scripts/selectorView/buttons.js" type="text/javascript"></script>
+		<script src="scripts/selectorView/roll.js" type="text/javascript"></script>
 	</head>
 	
 	<body>
@@ -83,8 +87,23 @@
 			</div>
 
 			<div id="selector-section" class="section slide-down">
-				<h1>Selector</h1>
-				<button id="back-selector-btn" class="list-btn">BACK</button>
+				<div class="roll-row">
+					<h1>Le gagnant est…</h1>
+					<div class="roll-frame">
+						<div id="roll-zone" class="roll-zone">
+						</div>
+					</div>
+				</div>
+				<div class="selector-btns-container">
+					<button id="selector-back-btn" class="selector-back-btn selector-btn">
+						<img src="medias/checkmark.svg">
+						<span>Valider</span>
+					</button>
+					<button id="selector-reroll-btn" class="selector-reroll-btn selector-btn">
+						<img src="medias/redo.svg">
+						<span>Relancer</span>
+					</button>
+				</div>
 			</div>
 		</div>
 	
